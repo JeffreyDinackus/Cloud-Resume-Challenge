@@ -12,15 +12,13 @@ jobs:
       run:
         working-directory: ./ # Set the working directory to the root of your repository
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Set Node.js version to 16
-
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: main # Specify the branch to checkout, if not the default branch
+          node-version: 16
 
       - name: Install AWS CLI
         run: |
