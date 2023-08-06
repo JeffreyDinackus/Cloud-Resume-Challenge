@@ -6,7 +6,8 @@
   <title>Jeffrey Dinackus's Cloud Resume</title>
   <link rel="stylesheet" href="./Assets/bootstrap-5.3.1-dist/css/bootstrap.min.css">
   <script src="./Assets/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
-    
+
+
   <style>
   .title{
     color: white;
@@ -53,8 +54,12 @@
     color: white;
     text-align: left;
   }
+  #view-count{
+    color: white;
+    text-align: center;
+  }
   </style>
-  <link rel="shortcut icon" type="image/jpg" href="./Assets/cloud.png">
+  <link rel="shortcut icon" type="image/jpg" href="https://s3.amazonaws.com/resume.jeffreydinackus.com/Assets/cloud.png">
 
   </head>
 <body>
@@ -70,8 +75,9 @@
   <div class="col">
   <p><a href="https://www.jeffreydinackus.com/">https://www.jeffreydinackus.com/</a></p>
   </div></div></div>
-  <h3>Visitor Counter: </h3>
-
+  <h3 id="counter">This resume has been viewed times</h3>
+  <h6 id="quote"></h3>
+  <p id="view-count"></p>
   <div class="container text-center">
   <div class="row align-items-start">
     <div class="col">
@@ -87,7 +93,7 @@
     
     
     
-    <button type="button" class="btn btn-outline-warning my-2">Networking and Subnetting</button></button> <button type="button" class="btn btn-outline-danger my-2">MicroSoft Office</button></button> </button> <button type="button" class="btn btn-outline-warning my-2">Linux</button></button> <button type="button" class="btn btn-outline-success my-2">Git</button><button type="button" class="btn btn-outline-primary my-2">Windows and Windows Server</button><button type="button" class="btn btn-outline-info my-2">Hardware and Software Troubleshooting</button>
+    <button type="button" class="btn btn-outline-warning my-2">Networking and Subnetting</button></button> <button type="button" class="btn btn-outline-danger my-2">Microsoft Office</button></button> </button> <button type="button" class="btn btn-outline-warning my-2">Linux</button></button> <button type="button" class="btn btn-outline-success my-2">Git</button><button type="button" class="btn btn-outline-primary my-2">Windows and Windows Server</button><button type="button" class="btn btn-outline-info my-2">Hardware and Software Troubleshooting</button>
 
   
   
@@ -100,7 +106,7 @@
   <h3 class="subtitle my-3">Experience</h3>
  
 
-<h4 class="bullet-Title">President of the Cloud Club</h4>
+<h4 class="bullet-Title">President of the Coding Club</h4>
 <p>Northern Virginia Community College</p>
 <p>May 2023 - Present</p>
  <ul>
@@ -110,7 +116,7 @@
  <li>Utilized professional network to organize guest speakers, resulting in 40% increase in participation.</li></ul>
 
 
-<h4 class="bullet-Title">Student liaison for Cloud Club</h4>
+<h4 class="bullet-Title">Help Desk Support for Cloud Club</h4>
 <p>Northern Virginia Community College</p>
 <p>
 March 2023 - Present</p><ul>
@@ -155,15 +161,15 @@ Actively listened to student questions and concerns, demonstrating strong interp
 
 </ul>
 <h4 class="bullet-Title">Hoohacks Hackathon by University of Virginia</h4>
-<ul>
-  <p>March 2023</p>
+<p>March 2023</p><ul>
+  
 
 <li>Learned how to use the Twilio API to create an automated voice and text messaging system.</li>
   <li>Worked with teammates to successfully divide duties between front-end and back-end.</li>
   </ul>
   <h4 class="bullet-Title">JeffreyDinackus.com</h4>
   
- <ul><p>June 2023</p>
+ <p>June 2023</p><ul>
 <li>Developed in one week using HTML, CSS, JS, Charts.js, Route 53, CD using Git and AWS Amplify.</li>
  <li>The initial deployment consisted of over 15 pages featuring personal finance calculators.</li>
 </ul>
@@ -175,5 +181,12 @@ Actively listened to student questions and concerns, demonstrating strong interp
     </div></div>
   
 </div>
+  <script>
+  quote = document.getElementById("quote");
+  counter = document.getElementById("counter");
+  const request = new Request("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json");
+  fetch(request);
+  console.log(request);
+  </script>
 </body>
 </html>
